@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.G8uol5.yUpiFpxaB32jsWtF8eWARolhHfo3Bp4SC5l3Gs"
+Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.GBCSHV.hcjmMScYm6JJYHibSQY1fJMhIuvMy0DwUcARLQ"
 bot = commands.Bot(command_prefix='', intents=discord.Intents.all())
 Channel_ID = 1046874399233544296
 
@@ -17,6 +17,9 @@ async def on_ready():
 async def Joe(ctx):
   await ctx.send("Joe Biden Died Of Ligama my balls")
 
+@bot.command()
+async def joe(ctx):
+  await ctx.send("Joe Biden Died Of Ligama my balls")
 
 @bot.command()
 async def fuckyou(ctx):
