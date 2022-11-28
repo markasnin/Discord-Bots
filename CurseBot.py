@@ -5,13 +5,15 @@ Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.GKcyhK.oJS_79V7OXpe9OtdCI522XhGDITRFyV2_
 bot = commands.Bot(command_prefix='', intents=discord.Intents.all())
 Channel_ID = 1046874399233544296
 
-
 @bot.event
 async def on_ready():
   print("The Bot Is Ready")
   channel = bot.get_channel(Channel_ID)
   await channel.send('Why are you here???')
 
+@bot.command()
+async def Joe(ctx):
+  await ctx.send("Joe Biden Died Of Ligama my balls")
 
 @bot.command()
 async def fuckyou(ctx):
@@ -40,6 +42,9 @@ async def dumb(ctx):
 async def cringe(ctx):
   await ctx.send("look who's talking")
 
+@bot.command()
+async def because(ctx):
+  await ctx.send("nah man your not for real for real:(")
 
 @bot.command()
 async def wtf(ctx):
