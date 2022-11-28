@@ -1,9 +1,10 @@
 import discord
 from discord.ext import commands
 
-Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.GKcyhK.oJS_79V7OXpe9OtdCI522XhGDITRFyV2_80S7o"
+Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.G8uol5.yUpiFpxaB32jsWtF8eWARolhHfo3Bp4SC5l3Gs"
 bot = commands.Bot(command_prefix='', intents=discord.Intents.all())
 Channel_ID = 1046874399233544296
+
 
 @bot.event
 async def on_ready():
@@ -11,17 +12,21 @@ async def on_ready():
   channel = bot.get_channel(Channel_ID)
   await channel.send('Why are you here???')
 
+
 @bot.command()
 async def Joe(ctx):
   await ctx.send("Joe Biden Died Of Ligama my balls")
+
 
 @bot.command()
 async def fuckyou(ctx):
   await ctx.send("Fuck you")
 
+
 @bot.command()
 async def fuck(ctx):
   await ctx.send("no fuck you")
+
 
 @bot.command()
 async def shit(ctx):
@@ -34,6 +39,11 @@ async def yourself(ctx):
 
 
 @bot.command()
+async def Shut(ctx):
+  await ctx.send("Don't tell me to shut up you little idiot monkey boy")
+
+
+@bot.command()
 async def dumb(ctx):
   await ctx.send("you dumb motherfucker")
 
@@ -42,9 +52,11 @@ async def dumb(ctx):
 async def cringe(ctx):
   await ctx.send("look who's talking")
 
+
 @bot.command()
 async def because(ctx):
   await ctx.send("nah man your not for real for real:(")
+
 
 @bot.command()
 async def wtf(ctx):
