@@ -1,9 +1,10 @@
-import discord
+import discord.utils
 from discord.ext import commands
 
-Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.GBCSHV.hcjmMScYm6JJYHibSQY1fJMhIuvMy0DwUcARLQ"
+Bot_Token = "MTA0Njg5Njc5MzExMzMyOTc0NQ.G-Gl8G.KZNCyk9cd0qIu06Zd7408yrSUt1M9zj-vKZPCg"
 bot = commands.Bot(command_prefix='', intents=discord.Intents.all())
 Channel_ID = 1046874399233544296
+username = bot.get_user(id)
 
 
 @bot.event
@@ -17,13 +18,20 @@ async def on_ready():
 async def Joe(ctx):
   await ctx.send("Joe Biden Died Of Ligama my balls")
 
+
 @bot.command()
 async def joe(ctx):
   await ctx.send("Joe Biden Died Of Ligama my balls")
 
+
 @bot.command()
 async def fuckyou(ctx):
-  await ctx.send("Fuck you")
+  await ctx.send(f"Fuck you {ctx.author.name}")
+
+
+@bot.command()
+async def shut(ctx):
+  await ctx.send(f"who do you think yout talking to {ctx.author.name}?  \n I'm the danger! \n I'm the who knocks!")
 
 
 @bot.command()
