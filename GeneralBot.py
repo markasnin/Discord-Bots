@@ -1,9 +1,10 @@
 import discord
 import datetime
 from discord.ext import commands, tasks
+from discord.ui import Button, View
 from dataclasses import dataclass
 
-Bot_Token = "MTA0Njg3MzYxMTM1ODcyMDA0MA.Gvx3vS.PLoZYYeZ5TYUVqOgYPQx7C7PEAKKEeVZwDxVMs"
+Bot_Token = "MTA0Njg3MzYxMTM1ODcyMDA0MA.GAHdoZ.BiB1Xo4375dEyQKxo2WZpL4xAEdrEFujQ383E8"
 Channel_ID = 1046874399233544296
 MAX_SESSION_TIME_MINUTES = 15
 
@@ -19,6 +20,7 @@ session = Session()
 
 #intents = discord.Intents.default()
 #intents.message_content = True
+
 
 @bot.event
 async def on_ready():
@@ -39,15 +41,19 @@ async def start(ctx):
   break_reminder.start()
   await ctx.send(f"New session started at {human_readable_time}")
 
+
 @tasks.loop(minutes=MAX_SESSION_TIME_MINUTES, count=2)
 async def break_reminder():
 
-    # Ignore the first execution of this command.
-    if break_reminder.current_loop == 0:
-        return
+  # Ignore the first execution of this command.
+  if break_reminder.current_loop == 0:
+    return
 
-    channel = bot.get_channel(Channel_ID)
-    await channel.send(f"**Bro Take a break!** You've been studying for {MAX_SESSION_TIME_MINUTES} minutes.")
+  channel = bot.get_channel(Channel_ID)
+  await channel.send(
+    f"**Bro Take a break!** You've been studying for {MAX_SESSION_TIME_MINUTES} minutes."
+  )
+
 
 @bot.command()
 async def end(ctx):
@@ -65,7 +71,11 @@ async def end(ctx):
 
 @bot.command()
 async def hello(ctx):
-  await ctx.send("Hello!")
+  button = Button(label="click me!",
+  style=discord.ButtonStyle.green, emoji="👋")
+  view = View()
+  view.add_item(button)
+  await ctx.send("Hello!", view=view)
 
 
 @bot.command()
@@ -75,6 +85,8 @@ async def add(ctx, *arr):
     result += int(i)
 
   await ctx.send(f"Result = {result}")
+  if bot.user(input(str)):
+    print("Sorry can't do that one:(")
 
 
 bot.run(Bot_Token)
